@@ -1,0 +1,32 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: -webkit-fill-available;
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 100vw;
+  background-color: #6f5582;
+  align-items: center;
+
+}
+
+h1 {
+ text-align: center;
+ font-family: futura;
+ color: #a6d0e0;
+}
+
+.player1, .player2 {
+  width: 35vw;
+  background-color: #a6d0e0;
+}
