@@ -52,49 +52,53 @@ div{
   border-bottom: solid #a6d0e0;
   border-right: solid #a6d0e0;
 }
+
 /*   middle left */
-.top-middle {
+.middle-left {
   border-right: solid #a6d0e0;
   border-bottom: solid #a6d0e0;
   border-top: solid #a6d0e0;
 }
+
 /*   bottom left */
-.top-right {
+.bottom-left {
   border-right: solid #a6d0e0;
   border-top: solid #a6d0e0;
 }
+
 /*  top middle */
-.middle-left {
+.top-middle {
   border-bottom: solid #a6d0e0;
   border-right: solid #a6d0e0;
   border-left: solid #a6d0e0;
 }
+
 /*   middle */
 .middle {
   border: solid #a6d0e0;
-
 }
-/*   bottom right */
-.bottom-right {
+
+/*   bottom middle */
+.bottom-middle {
+  border-right: solid #a6d0e0;
   border-top: solid #a6d0e0;
   border-left: solid #a6d0e0;
 }
 
 /*  top right */
-.bottom-left {
+.top-right {
   border-bottom: solid #a6d0e0;
   border-left: solid #a6d0e0;
 }
 /*   middle-right */
-.bottom-middle {
+.middle-right {
   border-left: solid #a6d0e0;
   border-bottom: solid #a6d0e0;
   border-top: solid #a6d0e0;
-
 }
-/*   bottom middle */
-.middle-right {
-  border-right: solid #a6d0e0;
+
+/*   bottom right */
+.bottom-right {
   border-top: solid #a6d0e0;
   border-left: solid #a6d0e0;
 }
