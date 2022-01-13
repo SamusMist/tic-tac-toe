@@ -1,0 +1,103 @@
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: -webkit-fill-available;
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 100vw;
+  background-color: #6f5582;
+  align-items: center;
+
+}
+
+h1 {
+ text-align: center;
+ font-family: futura;
+ color: #a6d0e0;
+}
+
+.player1, .player2 {
+  width: 35vw;
+  background-color: #a6d0e0;
+}
+
+.game-board {
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 60vh;
+  width: 70%;
+}
+
+div{
+  height: 15vh;
+  width: 10vw;
+}
+
+.top-left {
+  border-bottom: solid #a6d0e0;
+  border-right: solid #a6d0e0;
+}
+
+/*   middle left */
+.middle-left {
+  border-right: solid #a6d0e0;
+  border-bottom: solid #a6d0e0;
+  border-top: solid #a6d0e0;
+}
+
+/*   bottom left */
+.bottom-left {
+  border-right: solid #a6d0e0;
+  border-top: solid #a6d0e0;
+}
+
+/*  top middle */
+.top-middle {
+  border-bottom: solid #a6d0e0;
+  border-right: solid #a6d0e0;
+  border-left: solid #a6d0e0;
+}
+
+/*   middle */
+.middle {
+  border: solid #a6d0e0;
+}
+
+/*   bottom middle */
+.bottom-middle {
+  border-right: solid #a6d0e0;
+  border-top: solid #a6d0e0;
+  border-left: solid #a6d0e0;
+}
+
+/*  top right */
+.top-right {
+  border-bottom: solid #a6d0e0;
+  border-left: solid #a6d0e0;
+}
+/*   middle-right */
+.middle-right {
+  border-left: solid #a6d0e0;
+  border-bottom: solid #a6d0e0;
+  border-top: solid #a6d0e0;
+}
+
+/*   bottom right */
+.bottom-right {
+  border-top: solid #a6d0e0;
+  border-left: solid #a6d0e0;
+}
