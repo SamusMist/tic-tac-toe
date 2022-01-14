@@ -2,19 +2,18 @@ class Game {
   constructor() {
     this.one = new Player({id: 1, token: '🍨'});
     this.two = new Player({id: 2, token: '🍦'});
-    this.currentPlayer;
+    this.currentPlayer = 1;
+    this.startingPlayer = 1;
     this.board = ['', '', '', '', '', '', '', '', ''];
   }
 
   whoStarts() {
-    var goFirst = Math.floor(Math.random() * 2);
-    if (goFirst === 1) {
-      this.currentPlayer = this.one.id;
+    if (this.startingPlayer === 1) {
+      this.startingPlayer = 2;
+    } else {
+      this.startingPlayer = 1;
+      }
     }
-    if (goFirst === 0) {
-      this.currentPlayer = this.two.id;
-    }
-  }
 
   changeTurn() {
     if (this.currentPlayer === this.one.id) {
@@ -26,30 +25,36 @@ class Game {
 
 checkForWin() {
   if (this.board[0] === this.board[1] && this.board[1] === this.board[2] && this.board[0] !== '') {
-    win()
+    this.win()
   } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5] && this.board[3] !== '') {
-    win()
+    this.win()
   } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8] && this.board[6] !== '') {
-    win()
+    this.win()
   } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0] !== '') {
-    win()
+    this.win()
   } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1] !=='') {
-    win()
+    this.win()
   } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2] !== '') {
-    win()
+    this.win()
   } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8] && this.board[0] !== '') {
-    win()
+    this.win()
   } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6] && this.board[2] !== '') {
-    win()
+    this.win()
   }
+  this.draw();
 }
 
   reset() {
-    this.board = ['', '', '', '', '', '', '', '', ''];
+    this.board = ['', '', '', '', '', '', '', '', '']
+    this.whoStarts();
   }
 
   draw() {
+    if (!this.board.includes('')) {
+      console.log('Draw!')
+      this.reset();
 
+    }
   }
 
   win() {
@@ -60,12 +65,12 @@ checkForWin() {
       this.two.wins++;
     }
     console.log(`Player ${this.currentPlayer} wins!`)
-    reset();
+    this.reset();
   }
 
   playerMove(position) {
-    var playerOneValue = 'X';
-    var playerTwoValue = 'O';
+    var playerOneValue = '🍨';
+    var playerTwoValue = '🍦';
     if (this.board[position] !== '' || position < 0 || position > 8) {
       return `Try again, bish`;
     }
