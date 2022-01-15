@@ -1,9 +1,9 @@
 class Game {
   constructor() {
-    this.one = new Player({id: 1, token: '🍨'});
-    this.two = new Player({id: 2, token: '🍦'});
-    this.currentPlayer = 1;
+    this.one = new Player(1, '🧚‍♂️');
+    this.two = new Player(2, '🧞‍♀️');
     this.startingPlayer = 1;
+    this.currentPlayer = this.startingPlayer;
     this.board = ['', '', '', '', '', '', '', '', ''];
   }
 
@@ -45,7 +45,8 @@ checkForWin() {
 }
 
   reset() {
-    this.board = ['', '', '', '', '', '', '', '', '']
+    this.board = ['', '', '', '', '', '', '', '', ''];
+    this.currentPlayer = this.startingPlayer;
     this.whoStarts();
   }
 
@@ -69,8 +70,8 @@ checkForWin() {
   }
 
   playerMove(position) {
-    var playerOneValue = '🍨';
-    var playerTwoValue = '🍦';
+    var playerOneValue = '🧚‍♂️';
+    var playerTwoValue = '🧞‍♀️';
     if (this.board[position] !== '' || position < 0 || position > 8) {
       return `Try again, bish`;
     }
