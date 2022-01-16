@@ -38,9 +38,7 @@ function setToken(token) {
   var boxes = document.querySelectorAll('.box');
   for (var i = 0; i < boxes.length; i++) {
     if (event.target.id === boxes[i].id && newGame.currentPlayer === token) {
-      boxes[i].innerHTML += `
-      <h1>${token}</h1>
-      `;
+      boxes[i].innerHTML += `<h1>${token}</h1>`;
     }
   }
 }
@@ -57,9 +55,9 @@ function declareWinner(token, wins, player, playerWin) {
 
 function winCondition() {
   if (newGame.winner === newGame.one.token) {
-    declareWinner(newGame.one.token, newGame.one.wins, 'player-one-wins', playerOneWins)
+    declareWinner(newGame.one.token, newGame.one.wins, 'player-one-wins', playerOneWins);
   } else if (newGame.winner === newGame.two.token) {
-    declareWinner(newGame.two.token, newGame.two.wins, 'player-two-wins', playerTwoWins)
+    declareWinner(newGame.two.token, newGame.two.wins, 'player-two-wins', playerTwoWins);
   } else {
     declareDraw();
   }
@@ -67,7 +65,7 @@ function winCondition() {
 
 function declareDraw() {
   if (!newGame.board.includes('') && !newGame.winner) {
-    turnCounter.innerHTML = `<h2 class='turns'>Draw!</h2>`
+    turnCounter.innerHTML = `<h2 class='turns'>Draw!</h2>`;
     setTimeout(function () {
       newGame.reset();
       clear();
