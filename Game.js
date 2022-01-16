@@ -2,84 +2,79 @@ class Game {
   constructor() {
     this.one = new Player(1, '🧚‍♂️');
     this.two = new Player(2, '🧞‍♀️');
-    this.startingPlayer = 1;
+    this.startingPlayer = this.one.token;
     this.currentPlayer = this.startingPlayer;
     this.board = ['', '', '', '', '', '', '', '', ''];
+    this.winner = null;
   }
 
   whoStarts() {
-    if (this.startingPlayer === 1) {
-      this.startingPlayer = 2;
-    } else {
-      this.startingPlayer = 1;
+    if (this.startingPlayer === this.one.token) {
+      this.startingPlayer = this.two.token;
+    } else if (this.startingPlayer === this.two.token) {
+      this.startingPlayer = this.one.token;
       }
     }
 
   changeTurn() {
-    if (this.currentPlayer === this.one.id) {
-      this.currentPlayer = this.two.id;
-    } else if (this.currentPlayer === this.two.id) {
-      this.currentPlayer = this.one.id;
+    if (this.currentPlayer === this.one.token) {
+      this.currentPlayer = this.two.token;
+    } else if (this.currentPlayer === this.two.token) {
+      this.currentPlayer = this.one.token;
     }
   }
 
 checkForWin() {
-  if (this.board[0] === this.board[1] && this.board[1] === this.board[2] && this.board[0] !== '') {
+  if (this.board[0] === this.board[1] && this.board[1] === this.board[2] && this.board[0]) {
     this.win()
-  } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5] && this.board[3] !== '') {
+  } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5] && this.board[3]) {
     this.win()
-  } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8] && this.board[6] !== '') {
+  } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8] && this.board[6]) {
     this.win()
-  } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0] !== '') {
+  } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0]) {
     this.win()
-  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1] !=='') {
+  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1]) {
     this.win()
-  } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2] !== '') {
+  } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2]) {
     this.win()
-  } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8] && this.board[0] !== '') {
+  } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8] && this.board[0]) {
     this.win()
-  } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6] && this.board[2] !== '') {
+  } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6] && this.board[2]) {
     this.win()
   }
-  this.draw();
 }
 
   reset() {
     this.board = ['', '', '', '', '', '', '', '', ''];
     this.currentPlayer = this.startingPlayer;
-    this.whoStarts();
-  }
-
-  draw() {
-    if (!this.board.includes('')) {
-      console.log('Draw!')
-      this.reset();
-
+    this.winner = null;
+    for (var i = 0; i < box.length; i++) {
+      box[i].innerHTML = ``;
     }
+    this.whoStarts();
+    this.changeTurn();
   }
 
   win() {
-    if (this.currentPlayer === 1) {
+    if (this.currentPlayer === this.one.token) {
       this.one.wins++;
+      this.winner = this.one.token;
     }
-    if (this.currentPlayer === 2) {
+    if (this.currentPlayer === this.two.token) {
       this.two.wins++;
+      this.winner = this.two.token;
     }
-    console.log(`Player ${this.currentPlayer} wins!`)
-    this.reset();
   }
 
   playerMove(position) {
-    var playerOneValue = '🧚‍♂️';
-    var playerTwoValue = '🧞‍♀️';
     if (this.board[position] !== '' || position < 0 || position > 8) {
-      return `Try again, bish`;
+      return;
     }
-    if (this.currentPlayer === 1) {
-      this.board[position] = playerOneValue;
+    if (this.currentPlayer === this.one.token) {
+      this.board[position] = this.one.token;
     }
-    if (this.currentPlayer === 2) {
-      this.board[position] = playerTwoValue;
+    if (this.currentPlayer === this.two.token) {
+      this.board[position] = this.two.token;
     }
     this.checkForWin();
     this.changeTurn();
