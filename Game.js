@@ -53,19 +53,19 @@ checkForWin() {
   draw() {
     if (!this.board.includes('')) {
       console.log('Draw!')
-      this.reset();
+      winnerText.innerHTML += `<h2>Draw!</h2>`
     }
   }
 
   win() {
     if (this.currentPlayer === 1) {
       this.one.wins++;
+      winnerText.innerHTML += `<h2>🧚‍♂️ wins!</h2>`;
     }
     if (this.currentPlayer === 2) {
       this.two.wins++;
+      winnerText.innerHTML += `<h2>🧞‍♀️ wins!</h2>`;
     }
-    winnerText.innerHTML += `<h2>Player ${this.currentPlayer} wins!</h2>`
-    this.reset();
   }
 
   playerMove(position) {

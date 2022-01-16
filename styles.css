@@ -27,10 +27,29 @@ h1, h2 {
 }
 
 .player1, .player2 {
-  width: 35vw;
-  background-color: #a6d0e0;
+width: 35vw;
+background-color: #a6d0e0;
+display: flex;
+flex-direction:column;
+justify-content: space-between;
+align-items: center;
 }
 
+.wins {
+font-size: 40px;
+font-weight:bold;
+text-align: center;
+font-family: futura;
+color: #6f5582;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+margin-bottom: 25vh;
+}
+
+.player-section {
+  font-size: 120px;
+}
 .game-board {
   margin-bottom: 10%;
   display: flex;

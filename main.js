@@ -4,6 +4,8 @@ var newGame = new Game();
 // var cubes = documzent.querySelectorAll('.game-board');
 var board = document.querySelector('#gameBoard');
 var winnerText = document.querySelector('.board-area');
+var playerOneWins = document.querySelector('.playerOneWins');
+var playerTwoWins = document.querySelector('.playerTwoWins');
 // var squareOne = document.getElementById('0');
 
 // squareOne.addEventListener('click', boardClickHandler);
@@ -11,7 +13,6 @@ board.addEventListener('click', boardClickHandler);
 
 
 function boardClickHandler(event) {
-  newGame.playerMove(event.target.id);
   var boxes = document.querySelectorAll('.box');
   for (var i = 0; i < boxes.length; i++) {
     if (event.target.id === boxes[i].id && newGame.currentPlayer === 1) {
@@ -24,4 +25,5 @@ function boardClickHandler(event) {
         `;
       }
     }
+    newGame.playerMove(event.target.id);
   }
