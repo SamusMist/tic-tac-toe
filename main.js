@@ -29,26 +29,23 @@ function boardClickHandler(event) {
   }
 
 function winCondition() {
-  console.log('test')
   if (newGame.winner === newGame.one.token) {
-    playerOneWins.innerHTML = `<p class='player-one-wins'>${newGame.one.wins}</p>`;
-    turnCounter.innerHTML = `<h2 class='turns'>${newGame.one.token} wins!</h2>`;
-    setTimeout(function () {
-      newGame.reset();
-      clear();
-    }, 2000);
+    declareWinner(newGame.one.token, newGame.one.wins, 'player-one-wins', playerOneWins)
   } else if (newGame.winner === newGame.two.token) {
-    playerTwoWins.innerHTML = `<p class='player-two-wins'>${newGame.two.wins}</p>`;
-    turnCounter.innerHTML = `<h2 class='turns'>${newGame.two.token} wins!</h2>`;
-    setTimeout(function () {
-      newGame.reset();
-      clear();
-    }, 2000);
+    declareWinner(newGame.two.token, newGame.two.wins, 'player-two-wins', playerTwoWins)
   } else {
     draw();
   }
 }
 
+function declareWinner(token, wins, player, playerWin) {
+  playerWin.innerHTML = `<p class="${player}">${wins}</p>`;
+  turnCounter.innerHTML = `<h2 class='turns'>${token} wins!</h2>`;
+  setTimeout(function () {
+    newGame.reset();
+    clear();
+  }, 2000);
+}
 
 function changeTurn() {
   if (newGame.winner === null) {

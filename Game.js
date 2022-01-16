@@ -25,21 +25,21 @@ class Game {
   }
 
 checkForWin() {
-  if (this.board[0] === this.board[1] && this.board[1] === this.board[2] && this.board[0] !== '') {
+  if (this.board[0] === this.board[1] && this.board[1] === this.board[2] && this.board[0]) {
     this.win()
-  } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5] && this.board[3] !== '') {
+  } else if (this.board[3] === this.board[4] && this.board[4] === this.board[5] && this.board[3]) {
     this.win()
-  } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8] && this.board[6] !== '') {
+  } else if (this.board[6] === this.board[7] && this.board[7] === this.board[8] && this.board[6]) {
     this.win()
-  } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0] !== '') {
+  } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0]) {
     this.win()
-  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1] !== '') {
+  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1]) {
     this.win()
-  } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2] !== '') {
+  } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2]) {
     this.win()
-  } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8] && this.board[0] !== '') {
+  } else if (this.board[0] === this.board[4] && this.board[4] === this.board[8] && this.board[0]) {
     this.win()
-  } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6] && this.board[2] !== '') {
+  } else if (this.board[2] === this.board[4] && this.board[4] === this.board[6] && this.board[2]) {
     this.win()
   }
 }
@@ -59,10 +59,8 @@ checkForWin() {
     if (this.currentPlayer === this.one.token) {
       this.one.wins++;
       this.winner = this.one.token;
-      console.log('player 1 wins')
     }
     if (this.currentPlayer === this.two.token) {
-      console.log('player 2 wins')
       this.two.wins++;
       this.winner = this.two.token;
     }
@@ -70,7 +68,7 @@ checkForWin() {
 
   playerMove(position) {
     if (this.board[position] !== '' || position < 0 || position > 8) {
-      return `Try again, bish`;
+      return;
     }
     if (this.currentPlayer === this.one.token) {
       this.board[position] = this.one.token;
