@@ -20,7 +20,7 @@ main {
 
 }
 
-h1 {
+h1, h2 {
  text-align: center;
  font-family: futura;
  color: #a6d0e0;
@@ -100,4 +100,11 @@ div{
 .bottom-right {
   border-top: solid #a6d0e0;
   border-left: solid #a6d0e0;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
 }

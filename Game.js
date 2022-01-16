@@ -32,7 +32,7 @@ checkForWin() {
     this.win()
   } else if (this.board[0] === this.board[3] && this.board[3] === this.board[6] && this.board[0] !== '') {
     this.win()
-  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1] !=='') {
+  } else if (this.board[1] === this.board[4] && this.board[4] === this.board[7] && this.board[1] !== '') {
     this.win()
   } else if (this.board[2] === this.board[5] && this.board[5] === this.board[8] && this.board[2] !== '') {
     this.win()
@@ -54,7 +54,6 @@ checkForWin() {
     if (!this.board.includes('')) {
       console.log('Draw!')
       this.reset();
-
     }
   }
 
@@ -65,7 +64,7 @@ checkForWin() {
     if (this.currentPlayer === 2) {
       this.two.wins++;
     }
-    console.log(`Player ${this.currentPlayer} wins!`)
+    winnerText.innerHTML += `<h2>Player ${this.currentPlayer} wins!</h2>`
     this.reset();
   }
 
