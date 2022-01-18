@@ -51,6 +51,7 @@ checkForWin() {
     for (var i = 0; i < box.length; i++) {
       box[i].innerHTML = ``;
     }
+    board.addEventListener('click', boardClickHandler);
     this.whoStarts();
     this.changeTurn();
   }
