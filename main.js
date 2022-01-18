@@ -47,6 +47,7 @@ function setToken(token) {
 function declareWinner(token, wins, player, playerWin) {
   playerWin.innerHTML = `<p class="${player}">${wins}</p>`;
   turnCounter.innerHTML = `<h2 class='turns'>${token} wins!</h2>`;
+  board.removeEventListener('click', boardClickHandler);
   setTimeout(function () {
     newGame.reset();
     clear();
