@@ -25,7 +25,7 @@ Enjoy as many games as you want of good old fashioned tic tac toe with a friend!
 - You will also see above the board, an indictator to determine whose turn it is.
 - Note: If you refresh the page, all game data will be lost and player one will be first again.
 
-  ![game-one](https://im7.ezgif.com/tmp/ezgif-7-a11b4d5e6e.gif)
+  ![game-one](https://user-images.githubusercontent.com/89484102/150374760-fcfc8743-357b-4e81-9973-4288b7cae143.mov)
 
 ## Playing more games, and the Draw condition
 - After the first game is completed:
@@ -34,7 +34,7 @@ Enjoy as many games as you want of good old fashioned tic tac toe with a friend!
   - If a winner was declared, the appropraite win column will populate with the appropriate number of wins.
   - If the game results in a draw, the win columns will stay the same, the board will clear, and the player who did not start that game will then start.
 
-  ![draw-game](https://im7.ezgif.com/tmp/ezgif-7-7330073f94.gif)
+  ![draw-game](https://user-images.githubusercontent.com/89484102/150374431-8f7d5180-10b6-4e27-b318-0f829010157c.mov)
 
 ### Technologies
 - Git/github
